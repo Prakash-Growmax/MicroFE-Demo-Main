@@ -1,12 +1,8 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "npm install -g npm-run-all && npm run build",
   "outputDirectory": "dist",
-  "installCommand": "npm install",
-  "framework": "vite",
-  "rewrites": [
-    { "source": "/remoteEntry.js", "destination": "/remoteEntry.js" },
-    { "source": "/(.*)", "destination": "/index.html" }
-  ],
+  "installCommand": "npm install --no-scripts",
+  "framework": null,
   "headers": [
     {
       "source": "/(.*)",

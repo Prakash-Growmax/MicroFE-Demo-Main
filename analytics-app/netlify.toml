@@ -1,6 +1,7 @@
 [build]
-  command = "cd .. && pnpm install && cd analytical && pnpm build"
-  publish = "dist"
+  base = "/"
+  command = "pnpm install && pnpm build:analytics"
+  publish = "analytics-app/dist"
 
 [[headers]]
   for = "/*"

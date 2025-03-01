@@ -12,7 +12,9 @@ export default defineConfig({
     federation({
       name: "main-app",
       remotes: {
-        analyticsApp: "http://localhost:5003/assets/remoteEntry.js",
+        analyticsApp: import.meta.env.DEV
+          ? "http://localhost:5003/remoteEntry.js"
+          : "https://my-analytics-app.netlify.app/remoteEntry.js",
       },
       shared: ["react", "react-dom", "react-router-dom", "styled-components"],
     }),

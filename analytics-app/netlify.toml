@@ -1,0 +1,8 @@
+[build]
+  command = "cd .. && pnpm install && cd analytical && pnpm build"
+  publish = "dist"
+
+[[headers]]
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"

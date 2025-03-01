@@ -1,0 +1,23 @@
+{
+  "name": "enterprise-vite-pnpm",
+  "version": "1.0.0",
+  "description": "Micro-frontend demonstration with Vite and pnpm",
+  "scripts": {
+    "start:main": "cd main-app && pnpm dev",
+    "start": "concurrently \"pnpm start:main\" \"pnpm start:analytics\"",
+    "start:analytics": "cd analytics-app && pnpm build && pnpm preview",
+    "build:main": "cd main-app && pnpm build",
+    "build:analytics": "cd analytics-app && pnpm build",
+    "build": "pnpm build:main && pnpm build:analytics"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.2.0",
+    "shared": "link:../shared",
+    "styled-components": "^6.1.15"
+  }
+}

@@ -1,4 +1,3 @@
-// analytics-app/vite.config.js
 import federation from "@originjs/vite-plugin-federation";
 import react from "@vitejs/plugin-react";
 import path from "path";
@@ -10,6 +9,7 @@ export default defineConfig({
     react(),
     federation({
       name: "analytics-app",
+      // Important: Set this to output at the root instead of in assets/
       filename: "remoteEntry.js",
       exposes: {
         "./AnalyticsModule": "./src/components/AnalyticsModule.jsx",
@@ -43,5 +43,15 @@ export default defineConfig({
     target: "esnext",
     minify: false,
     cssCodeSplit: false,
+    rollupOptions: {
+      output: {
+        // Place remoteEntry.js at the root of the dist folder
+        entryFileNames: (chunkInfo) => {
+          return chunkInfo.name === "remoteEntry"
+            ? "remoteEntry.js"
+            : "assets/[name]-[hash].js";
+        },
+      },
+    },
   },
 });

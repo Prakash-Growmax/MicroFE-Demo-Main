@@ -1,4 +1,3 @@
-// main-app/vite.config.js
 import federation from "@originjs/vite-plugin-federation";
 import react from "@vitejs/plugin-react";
 import path from "path";
@@ -12,7 +11,12 @@ export default defineConfig({
     federation({
       name: "main-app",
       remotes: {
-        analyticsApp: "http://localhost:5003/remoteEntry.js",
+        // Try this URL if the root one doesn't work
+        analyticsApp:
+          "https://micro-fe-demo-main-analytics-app.vercel.app/assets/remoteEntry.js",
+        // Or if the above solution works, keep it at the root
+        // analyticsApp:
+        //   "https://micro-fe-demo-main-analytics-app.vercel.app/remoteEntry.js",
       },
       shared: ["react", "react-dom", "react-router-dom", "styled-components"],
     }),
@@ -23,7 +27,7 @@ export default defineConfig({
     },
   },
   server: {
-    port: 5001, // Change from 5000 to 5001
+    port: 5001,
     strictPort: true,
     cors: {
       origin: "*",

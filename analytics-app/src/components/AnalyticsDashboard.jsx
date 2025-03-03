@@ -30,10 +30,11 @@ const MetricLabel = styled.div`
 const AnalyticsDashboard = () => {
   // In a real app, this data would come from an API
   const metrics = [
-    { id: 1, label: "Revenue", value: 125000, format: "currency" },
+    { id: 1, label: "Revenue", value: 135000, format: "currency" },
     { id: 2, label: "Orders", value: 1205, format: "number" },
     { id: 3, label: "Customers", value: 847, format: "number" },
     { id: 4, label: "Conversion Rate", value: 3.2, format: "percent" },
+    { id: 5, label: "Profit Rate", value: 70, format: "percent" },
   ];
 
   const formatValue = (value, format) => {

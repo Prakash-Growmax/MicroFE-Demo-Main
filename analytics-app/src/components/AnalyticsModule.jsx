@@ -32,7 +32,7 @@ const AnalyticsModule = () => {
 
   return (
     <Container>
-      <h1>Analytics Module </h1>
+      <h1>Analytics Module Build & Preview Mode </h1>
       <TabsContainer>
         <Tab
           active={activeTab === "dashboard"}

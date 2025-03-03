@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "prebuild": "npm install -g npm-run-all"
+    "prebuild": "npm install -g npm-run-all",
+    "build-and-preview": "npm-run-all build preview"
   },
   "dependencies": {
     "react": "^19.0.0",

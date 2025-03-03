@@ -14,7 +14,7 @@ function AppContent() {
   return (
     <div>
       <Header
-        appName="Analytics Application"
+        appName="Analytics Preview Application"
         navLinks={navLinks}
         isAuthenticated={isAuthenticated}
         onLogout={logout}

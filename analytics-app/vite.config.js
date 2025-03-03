@@ -21,6 +21,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
+      "/vercel/shared": path.resolve(__dirname, "../shared"),
       "@shared": path.resolve(__dirname, "../shared"),
     },
   },
